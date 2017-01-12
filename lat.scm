@@ -24,3 +24,17 @@
       ((eq? (car latlist) a) (cdr latlist))
       (else (cons (car latlist) (rember a (cdr latlist)))))))
 
+; Assumes list is empty or is list of non-empty lists
+(define firsts
+  (lambda (l)
+    (cond
+      ((null? l) '())
+      (else (cons (car (car l)) (firsts (cdr l)))))))
+
+(define insertR
+  (lambda (new old lat)
+    (cond
+      ((null? lat) '())
+      ((eq? (car lat) old) (cons old (cons new (cdr lat))))
+      (else (cons (car lat) (insertR new old (cdr lat)))))))
+
