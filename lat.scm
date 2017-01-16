@@ -59,3 +59,16 @@
       ((or (eq? (car lat) o1) (eq? (car lat) o2)) (cons new (cdr lat)))
       (else (cons (car lat) (subst2 new o1 o2 (cdr lat)))))))
 
+(define multirember
+  (lambda (a lat)
+    (cond
+      ((null? lat) '())
+      ((eq? (car lat) a) (multirember a (cdr lat)))
+      (else (cons (car lat) (multirember a (cdr lat)))))))
+
+(define multiinsertR
+  (lambda (new old lat)
+    (cond
+      ((null? lat) '())
+      ((eq? (car lat) old) (cons (car lat) (cons new (multiinsertR new old (cdr lat)))))
+      (else (cons (car lat) (multiinsertR new old (cdr lat)))))))
