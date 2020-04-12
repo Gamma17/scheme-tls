@@ -1,5 +1,5 @@
 # scheme-tls
-Working through [The Little Schemer] (https://mitpress.mit.edu/books/little-schemer "The Little Schemer")...
+Working through [The Little Schemer](https://mitpress.mit.edu/books/little-schemer "The Little Schemer")...
 
 ((1. Toys) __done__)
 
